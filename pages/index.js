@@ -1,15 +1,22 @@
-import { css } from '@emotion/css'
-import tw from '@tailwindcssinjs/macro'
-import ButtonCss from '../components/ButtonCss'
-import ButtonReact from '../components/ButtonReact'
-import ButtonStyled from '../components/ButtonStyled'
+import styled from '@emotion/styled';
+import tw from '@tailwindcssinjs/macro';
+
+import { Navigation } from '../components/Navigation';
+import Card, { CardContainer } from '../components/Card';
+
+export const PageRoot = styled.div`
+  ${tw`antialiased w-full h-full`}
+`;
 
 const Index = () => (
-  <div className={css(tw`grid justify-center items-center h-screen`)}>
-    <ButtonCss>@emotion/css</ButtonCss>
-    <ButtonReact>@emotion/react</ButtonReact>
-    <ButtonStyled>@emotion/styled</ButtonStyled>
-  </div>
-)
+  <PageRoot>
+    <Navigation />
+    <CardContainer>
+      <Card />
+      <Card />
+      <Card />
+    </CardContainer>
+  </PageRoot>
+);
 
-export default Index
+export default Index;
