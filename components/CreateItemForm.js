@@ -50,7 +50,10 @@ const FormItem = styled.div`
   input,
   textarea {
     ${tw`w-full px-3 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline`}
-    ${(props) => (props.touched && props.errors ? tw`border-red-500` : tw``)}
+    ${(props) => {
+      console.log(props.theme);
+      return props.touched && props.errors ? tw`border-red-500` : tw``;
+    }}
   }
 `;
 
