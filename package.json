@@ -8,11 +8,21 @@
     "build:base-css": "tailwindcss build ./styles/tailwind.base.css -o ./styles/base.css"
   },
   "dependencies": {
+    "@apollo/react-hooks": "^3.1.5",
     "@emotion/css": "^11.0.0-next.12",
     "@emotion/react": "^11.0.0-next.12",
     "@emotion/styled": "^11.0.0-next.12",
+    "apollo-boost": "^0.4.8",
+    "apollo-cache-inmemory": "^1.6.6",
+    "apollo-client": "^2.6.9",
+    "apollo-link-http": "^1.5.17",
+    "formik": "^2.1.4",
+    "graphql": "^15.0.0",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "latest",
+    "next-with-apollo": "^5.0.1",
     "react": "16.13.1",
+    "react-apollo": "^3.1.5",
     "react-dom": "16.13.1"
   },
   "devDependencies": {
@@ -24,6 +34,7 @@
     "@tailwindcssinjs/macro": "^0.3.1",
     "babel-eslint": "^10.1.0",
     "babel-plugin-macros": "2.8.0",
+    "emotion": "^10.0.27",
     "emotion-theming": "^10.0.27",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",

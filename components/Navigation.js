@@ -41,6 +41,9 @@ export const Navigation = () => {
             <Link href="/portfolio">
               <NavLink>Portfolio</NavLink>
             </Link>
+            <Link href="/addItem">
+              <NavLink>Add Item</NavLink>
+            </Link>
             <Link href="/about">
               <NavLink>About</NavLink>
             </Link>

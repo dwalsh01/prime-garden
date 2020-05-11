@@ -1,17 +1,37 @@
 import Head from 'next/head';
-// import '../styles/base.css';
 import 'tailwindcss/dist/tailwind.min.css';
-import Theme from '../styles/theme/theme';
+import { ApolloProvider } from 'react-apollo';
+import { CacheProvider } from '@emotion/react';
+import { cache } from 'emotion';
+import withData from '../apollo/withData';
+import Root from '../components/PageLayout';
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, apollo }) {
   return (
     <>
       <Head>
         <title>Prime Garden</title>
       </Head>
-      <Theme>
-        <Component {...pageProps} />
-      </Theme>
+      <ApolloProvider client={apollo}>
+        <Root>
+          <CacheProvider value={cache}>
+            <Component {...pageProps} />
+          </CacheProvider>
+        </Root>
+      </ApolloProvider>
     </>
   );
 }
+
+MyApp.getInitialProps = async ({ Component, ctx }) => {
+  let pageProps = {};
+  if (Component.getInitialProps) {
+    pageProps = await Component.getInitialProps(ctx);
+  }
+  pageProps.query = ctx.query;
+  return {
+    pageProps,
+  };
+};
+
+export default withData(MyApp);

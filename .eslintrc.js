@@ -24,9 +24,10 @@ module.exports = {
       "react"
   ],
   "rules": {
-      "no-console": 2,
+      "no-console": 0,
       "prettier/prettier": "error",
       "import/no-extraneous-dependencies": 0,
       "react/jsx-props-no-spreading": 0,
+
   }
 };
